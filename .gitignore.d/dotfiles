@@ -1,4 +1,6 @@
 *
+!/.bash_profile
+!/.bashrc
 !/.gitignore.d
 !/.gitignore.d/dotfiles
 !/.tmux.conf
