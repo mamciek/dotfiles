@@ -4,6 +4,8 @@ export EDITOR=vim
 export HISTCONTROL=ignoreboth:erasedups
 export XDG_CONFIG_HOME="$HOME/.config"
 
+export PATH=$HOME/bin:$PATH
+
 if [ -n "$DISPLAY" ]; then
     export BROWSER=chromium
 fi
@@ -36,4 +38,9 @@ export CHICKEN_REPOSITORY=$HOME/.chicken/eggs
 # fasd
 eval "$(fasd --init auto)"
 alias v='f -e vim'
+
+#pyenv
+export PATH="/home/maciej/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
