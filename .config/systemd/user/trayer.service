@@ -1,0 +1,16 @@
+[Unit]
+Description=Trayer
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/trayer \
+    --edge top \
+    --height 20 \
+    --SetPartialStrut true \
+    --widthtype request \
+    --align right \
+    --transparent true \
+    --tint 0x3c3b37 \
+    --alpha 0 \
+    --padding 10
+Restart=always

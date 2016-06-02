@@ -1,0 +1,7 @@
+[Unit]
+Description=udisksvm
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udisksvm
+Restart=always

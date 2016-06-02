@@ -1,0 +1,7 @@
+[Unit]
+Description=Volwheel
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/volwheel
+Restart=always

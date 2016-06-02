@@ -1,0 +1,7 @@
+[Unit]
+Description=clipster daemon
+
+[Service]
+Type=simple
+ExecStart=/home/maciej/projects/clipster/clipster -d
+Restart=always
