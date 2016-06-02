@@ -1,6 +1,10 @@
 *
 !/.bash_profile
 !/.bashrc
+!/.config
+!/.config/systemd
+!/.config/systemd/user
+!/.config/systemd/user/gpg-agent.service
 !/.gitignore.d
 !/.gitignore.d/dotfiles
 !/.tmux.conf
