@@ -20,12 +20,6 @@ if [ $? -eq 1 ]; then
     exit 1
 fi
 
-pass=$(secret-tool lookup tag dropbox_encfs)
-if [ -z "$pass" ]; then
-    echo "Add password to keyring first"
-    exit 1
-fi
-
 mount_dir="$HOME/encfs/dropbox_private"
 if [ ! -d "$mount_dir" ]; then
     mkdir -p "$mount_dir"
