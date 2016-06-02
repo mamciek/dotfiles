@@ -8,3 +8,5 @@
 !/.gitignore.d
 !/.gitignore.d/dotfiles
 !/.tmux.conf
+!/bin
+!/bin/mount-encfs

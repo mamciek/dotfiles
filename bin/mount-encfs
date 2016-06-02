@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+script_dir="$(dirname "$(readlink -nf "$0")")"
+
+dropbox_dir="$HOME/Dropbox/Private"
+if [ ! -d "$dropbox_dir" ]; then
+    echo "Install and configure Dropbox first"
+    exit 1
+fi
+
+hash lpass 2>&-
+if [ $? -eq 1 ]; then
+    echo "Install lastpass-cli first"
+    exit 1
+fi
+
+hash encfs 2>&-
+if [ $? -eq 1 ]; then
+    echo "Install encfs first"
+    exit 1
+fi
+
+pass=$(secret-tool lookup tag dropbox_encfs)
+if [ -z "$pass" ]; then
+    echo "Add password to keyring first"
+    exit 1
+fi
+
+mount_dir="$HOME/encfs/dropbox_private"
+if [ ! -d "$mount_dir" ]; then
+    mkdir -p "$mount_dir"
+fi
+
+eval $(lpass show "dropbox encfs"|grep DROPBOX_ENC_PASS)
+echo $DROPBOX_ENC_PASS | encfs -S "$dropbox_dir" "$mount_dir"
+unset DROPBOX_ENC_PASS
