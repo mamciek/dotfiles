@@ -46,3 +46,15 @@ eval "$(pyenv virtualenv-init -)"
 
 # golang
 export GOPATH=$HOME/projects/go
+
+if [ $(hostname) = "ktr-mmazur" ]; then
+   export GIT_COMMITTER_NAME="Maciej Mazur"
+   export GIT_COMMITTER_EMAIL="Maciej.Mazur@komputronik.pl"
+   export GIT_AUTHOR_NAME="Maciej Mazur"
+   export GIT_AUTHOR_EMAIL="Maciej.Mazur@komputronik.pl"
+else
+   export GIT_COMMITTER_NAME="Maciej Mazur"
+   export GIT_COMMITTER_EMAIL="mamciek@gmail.com"
+   export GIT_AUTHOR_NAME="Maciej Mazur"
+   export GIT_AUTHOR_EMAIL="mamciek@gmail.com"
+fi
