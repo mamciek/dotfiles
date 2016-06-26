@@ -7,6 +7,7 @@
 !/.config/systemd/user
 !/.config/systemd/user/clipster.service
 !/.config/systemd/user/gpg-agent.service
+!/.config/systemd/user/megasync.service
 !/.config/systemd/user/trayer.service
 !/.config/systemd/user/udiskvm.service
 !/.config/systemd/user/volwheel.service

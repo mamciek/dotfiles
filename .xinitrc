@@ -10,6 +10,7 @@ setxkbmap pl
 xmodmap $HOME/.Xmodmap
 
 systemctl --user start dropbox
+systemctl --user start megasync
 systemctl --user start pulseaudio
 systemctl --user start udiskvm
 systemctl --user start trayer
