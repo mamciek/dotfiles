@@ -25,6 +25,7 @@ myManageHook = composeAll
                , className =? "mpv"      --> doFloat
                , className =? "clipster" --> doFloat
                , className =? "Clipster" --> doFloat
+               , className =? "Volwheel" --> doFloat
                , className =? "MPlayer"  --> doFloat ]
 
 myLayoutHook = avoidStruts $ smartBorders (tiled ||| Mirror tiled ||| Full)
