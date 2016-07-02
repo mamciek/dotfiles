@@ -44,6 +44,9 @@ export PATH="/home/maciej/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+#rbenv
+eval "$(rbenv init -)"
+
 # golang
 export GOPATH=$HOME/projects/go
 
