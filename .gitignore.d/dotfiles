@@ -1,10 +1,12 @@
 *
-!/.Xmodmap
 !/.bash_profile
 !/.bashrc
+!/bin
+!/bin/mount-encfs
 !/.config
 !/.config/systemd
 !/.config/systemd/user
+!/.config/systemd/user/cbatticon.service
 !/.config/systemd/user/clipster.service
 !/.config/systemd/user/gpg-agent.service
 !/.config/systemd/user/megasync.service
@@ -20,7 +22,6 @@
 !/.gnupg/gpg.conf
 !/.tmux.conf
 !/.xinitrc
+!/.Xmodmap
 !/.xmonad
 !/.xmonad/xmonad.hs
-!/bin
-!/bin/mount-encfs

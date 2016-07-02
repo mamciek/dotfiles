@@ -1,0 +1,7 @@
+[Unit]
+Description=cbatticon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cbatticon
+Restart=always
