@@ -20,6 +20,7 @@ systemctl --user start udiskvm
 systemctl --user start trayer
 systemctl --user start volwheel
 systemctl --user start clipster
+systemctl --user start cbatticon
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
