@@ -15,5 +15,6 @@
 	ci = commit
 	co = checkout
 	cp = cherry-pick
+	put = push origin HEAD:refs/publish/test
 [push]
 	default = simple
