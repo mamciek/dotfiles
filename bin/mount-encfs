@@ -25,6 +25,6 @@ if [ ! -d "$mount_dir" ]; then
     mkdir -p "$mount_dir"
 fi
 
-eval $(lpass show "dropbox encfs"|grep DROPBOX_ENC_PASS)
+eval $(lpass show "dropbox encfs"|grep DROPBOX_ENC_PASS|sed 's|Notes: ||')
 echo $DROPBOX_ENC_PASS | encfs -S "$dropbox_dir" "$mount_dir"
 unset DROPBOX_ENC_PASS
