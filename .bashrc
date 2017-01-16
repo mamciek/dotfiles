@@ -47,6 +47,10 @@ eval "$(pyenv virtualenv-init -)"
 #rbenv
 eval "$(rbenv init -)"
 
+#nvm
+source /usr/share/nvm/init-nvm.sh
+
+
 # golang
 export GOPATH=$HOME/projects/go
 
