@@ -16,5 +16,6 @@
 	co = checkout
 	cp = cherry-pick
 	put = push origin HEAD:refs/publish/test
+	pud = push origin HEAD:refs/drafts/test
 [push]
 	default = simple
