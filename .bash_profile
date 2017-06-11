@@ -1,5 +1,3 @@
-systemctl --user start gpg-agent
-
 # Set SSH to use gpg-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
