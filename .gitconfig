@@ -15,7 +15,10 @@
 	ci = commit
 	co = checkout
 	cp = cherry-pick
+	puk = push origin HEAD:refs/publish/komputronik
 	put = push origin HEAD:refs/publish/test
 	pud = push origin HEAD:refs/drafts/test
+	pr = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; } ; f"
+	prm = "!f() { git fetch $1 refs/pull-requests/$2/merge:$3; } ; f"
 [push]
 	default = simple
