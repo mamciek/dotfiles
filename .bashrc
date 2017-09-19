@@ -5,6 +5,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH=$HOME/bin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 
 if [ -n "$DISPLAY" ]; then
     export BROWSER=chromium
