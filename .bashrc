@@ -40,16 +40,20 @@ export CHICKEN_REPOSITORY=$HOME/.chicken/eggs
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 
-#pyenv
-export PATH="/home/maciej/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ -z "$DOTFILES_EXPENSIVE_INIT" ]; then
+    #pyenv
+    export PATH="/home/maciej/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 
-#rbenv
-eval "$(rbenv init -)"
+    #rbenv
+    eval "$(rbenv init -)"
 
-#nvm
-source /usr/share/nvm/init-nvm.sh
+    #nvm
+    source /usr/share/nvm/init-nvm.sh
+
+    export DOTFILES_EXPENSIVE_INIT=1
+fi
 
 
 # golang

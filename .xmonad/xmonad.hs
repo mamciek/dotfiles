@@ -13,7 +13,7 @@ main :: IO()
 main =  do
     xmonad =<< dzen (withUrgencyHook NoUrgencyHook $ ewmh def
         { modMask = mod4Mask
-        , terminal = "st -e tmux"
+        , terminal = "st -e bash -i -c tmux"
         , manageHook = myManageHook
         , startupHook = myStartupHook
         , layoutHook = myLayoutHook
