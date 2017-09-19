@@ -7,6 +7,7 @@ import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
+import XMonad.Actions.CycleWS
 
 main :: IO()
 main =  do
@@ -53,6 +54,7 @@ myKeys = [ ("<XF86AudioMute>", spawn "amixer -q sset Master toggle")
          , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10 -time 1 -steps 1")
          , ("M-<Insert>", spawn "/home/maciej/projects/clipster/clipster -sc")
          , ("C-M-l", spawn "slock")
+         , ("M-<Tab>", toggleWS)
          ] ++ workspaceKeys
 
 workspaceKeys :: [(String, X ())]
