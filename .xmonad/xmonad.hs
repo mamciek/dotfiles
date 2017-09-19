@@ -15,10 +15,15 @@ main =  do
         { modMask = mod4Mask
         , terminal = "st -e tmux"
         , manageHook = myManageHook
-        , startupHook = setWMName "LG3D"
+        , startupHook = myStartupHook
         , layoutHook = myLayoutHook
         , workspaces = myWorkspaces
         } `additionalKeysP` myKeys)
+
+myStartupHook :: X ()
+myStartupHook = do
+  setWMName "LG3D"
+  spawn "systemctl --user start alttab"
 
 myManageHook :: ManageHook
 myManageHook = composeAll

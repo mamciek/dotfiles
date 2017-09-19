@@ -1,0 +1,7 @@
+[Unit]
+Description=alttab
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/alttab
+Restart=always
