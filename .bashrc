@@ -1,3 +1,12 @@
+function os_type() {
+    case "$OSTYPE" in
+	linux*)   echo "linux" ;;
+	darwin*)  echo "mac" ;;
+	bsd*)     echo "bsd" ;;
+	*)        echo "unknown" ;;
+    esac
+}
+
 umask 0022
 
 export EDITOR=vim
