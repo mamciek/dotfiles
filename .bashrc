@@ -31,7 +31,11 @@ fi
 # aliases
 alias ..='cd ..'
 alias cd..='cd ..'
+
 alias ls='LC_COLLATE=POSIX ls -hF --color=auto'
+if [ `os_type` == "mac" ]; then
+    alias ls='LC_COLLATE=POSIX gls -hF --color=auto'
+fi
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'
