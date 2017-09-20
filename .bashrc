@@ -47,7 +47,8 @@ alias v='f -e vim'
 
 if [ -z "$DOTFILES_EXPENSIVE_INIT" ]; then
     #pyenv
-    export PATH="/home/maciej/.pyenv/bin:$PATH"
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 
