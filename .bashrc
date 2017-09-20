@@ -75,3 +75,9 @@ else
    export GIT_AUTHOR_NAME="Maciej Mazur"
    export GIT_AUTHOR_EMAIL="mamciek@gmail.com"
 fi
+
+if [ `os_type` == "mac" ]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+    fi
+fi
