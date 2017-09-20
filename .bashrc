@@ -55,11 +55,15 @@ if [ -z "$DOTFILES_EXPENSIVE_INIT" ]; then
     eval "$(rbenv init -)"
 
     #nvm
-    source /usr/share/nvm/init-nvm.sh
+    export NVM_DIR="$HOME/.nvm"
+    if [ `os_type` == 'mac' ]; then
+        source /usr/local/opt/nvm/nvm.sh
+    else
+        source /usr/share/nvm/init-nvm.sh
+    fi
 
     export DOTFILES_EXPENSIVE_INIT=1
 fi
-
 
 # golang
 export GOPATH=$HOME/projects/go
