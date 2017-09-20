@@ -20,14 +20,6 @@ if [ -n "$DISPLAY" ]; then
     export BROWSER=chromium
 fi
 
-if [ "$HOSTNAME" = "ktr-mmazur" ]; then
-    export GIT_AUTHOR_NAME="Maciej Mazur"
-    export GIT_AUTHOR_EMAIL="Maciej.Mazur@komputronik.pl"
-    export GIT_COMMITTER_NAME="Maciej Mazur"
-    export GIT_COMMITTER_EMAIL="Maciej.Mazur@komputronik.pl"
-    export GIT_SSH_USERNAME=m.mazur
-fi
-
 # aliases
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -72,11 +64,11 @@ fi
 # golang
 export GOPATH=$HOME/projects/go
 
-if [ $(hostname) = "ktr-mmazur" ]; then
+if [ $(hostname) = "rq-mmazur.echostar.pl" -o $(hostname) = 'rq-mmazur' ]; then
    export GIT_COMMITTER_NAME="Maciej Mazur"
-   export GIT_COMMITTER_EMAIL="Maciej.Mazur@komputronik.pl"
+   export GIT_COMMITTER_EMAIL="mmazur@roq.ad"
    export GIT_AUTHOR_NAME="Maciej Mazur"
-   export GIT_AUTHOR_EMAIL="Maciej.Mazur@komputronik.pl"
+   export GIT_AUTHOR_EMAIL="mmazur@roq.ad"
 else
    export GIT_COMMITTER_NAME="Maciej Mazur"
    export GIT_COMMITTER_EMAIL="mamciek@gmail.com"
