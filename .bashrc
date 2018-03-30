@@ -69,6 +69,8 @@ fi
 # golang
 export GOPATH=$HOME/projects/go
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 if [ $(hostname) = "rq-mmazur.echostar.pl" -o $(hostname) = 'rq-mmazur' ]; then
    export GIT_COMMITTER_NAME="Maciej Mazur"
    export GIT_COMMITTER_EMAIL="mmazur@roq.ad"
