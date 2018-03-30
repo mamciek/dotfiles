@@ -45,26 +45,9 @@ export CHICKEN_REPOSITORY=$HOME/.chicken/eggs
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 
-if [ -z "$DOTFILES_EXPENSIVE_INIT" ]; then
-    #pyenv
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-
-    #rbenv
-    eval "$(rbenv init -)"
-
-    #nvm
-    export NVM_DIR="$HOME/.nvm"
-    if [ `os_type` == 'mac' ]; then
-        source /usr/local/opt/nvm/nvm.sh
-    else
-        source /usr/share/nvm/init-nvm.sh
-    fi
-
-    export DOTFILES_EXPENSIVE_INIT=1
-fi
+alias init-nvm="source $HOME/lib/scripts/init-nvm.sh"
+alias init-pyenv="source $HOME/lib/scripts/init-pyenv.sh"
+alias init-rbenv="source $HOME/lib/scripts/init-rbenv.sh"
 
 # golang
 export GOPATH=$HOME/projects/go
