@@ -17,7 +17,7 @@ export PATH=$HOME/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
 if [ -n "$DISPLAY" ]; then
-    export BROWSER=chromium
+    export BROWSER=firefox
 fi
 
 # aliases
