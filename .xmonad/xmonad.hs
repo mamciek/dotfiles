@@ -8,10 +8,11 @@ import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Actions.CycleWS
+import qualified XMonad.Hooks.WorkspaceHistory as WH
 
 main :: IO()
 main =  do
-    xmonad =<< dzen (withUrgencyHook NoUrgencyHook $ ewmh def
+    xmonad =<< dzen (withUrgencyHook NoUrgencyHook $ myEwmh def
         { modMask = mod4Mask
         , terminal = "st -e bash -i -c tmux"
         , manageHook = myManageHook
@@ -20,10 +21,22 @@ main =  do
         , workspaces = myWorkspaces
         } `additionalKeysP` myKeys)
 
+myEwmh :: XConfig a -> XConfig a
+myEwmh c = c { startupHook     = startupHook c +++ ewmhDesktopsStartup
+             , handleEventHook = handleEventHook c +++ ewmhDesktopsEventHook
+             , logHook         = logHook c +++ myEwmhDesktopsLogHook }
+  where x +++ y = mappend y x
+
+myEwmhDesktopsLogHook :: X ()
+myEwmhDesktopsLogHook = ewmhDesktopsLogHookCustom sortByHistory
+
+sortByHistory :: [WindowSpace] -> [WindowSpace]
+sortByHistory ws = reverse ws
+
 myStartupHook :: X ()
 myStartupHook = do
   setWMName "LG3D"
-  spawn "systemctl --user start alttab"
+--  spawn "systemctl --user start alttab"
 
 myManageHook :: ManageHook
 myManageHook = composeAll
@@ -60,6 +73,7 @@ myKeys = [ ("<XF86AudioMute>", spawn "amixer -q sset Master toggle")
          , ("M-<Insert>", spawn "/home/maciej/projects/clipster/clipster -sc")
          , ("C-M-l", spawn "slock")
          , ("M-<Tab>", toggleWS)
+         , ("M1-<Tab>", spawn "rofi -show window -window-format '{c}' -kb-cancel 'Alt+Escape,Escape' -kb-accept-entry '!Alt-Tab,Return,Control+j' -kb-row-down 'Alt-Tab,Down,Control+n' -kb-row-up 'Alt+ISO_Left_Tab,Control+p'")
          ] ++ workspaceKeys
 
 workspaceKeys :: [(String, X ())]
