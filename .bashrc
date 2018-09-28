@@ -14,43 +14,19 @@ export HISTCONTROL=ignoreboth:erasedups
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH=$HOME/bin:$PATH
-export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -n "$DISPLAY" ]; then
-    export BROWSER=firefox
-fi
-
-# aliases
-alias ..='cd ..'
-alias cd..='cd ..'
-
 alias ls='LC_COLLATE=POSIX ls -hF --color=auto'
-if [ `os_type` == "mac" ]; then
-    alias ls='LC_COLLATE=POSIX gls -hF --color=auto'
+if hash exa 2>/dev/null; then
+    alias ls='exa'
 fi
-alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
-alias la='ll -A'
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
-alias lm='la --color | less -R'
-alias psc='ps xawf -eo pid,user,cgroup,args'
 alias sudo='sudo '                  # pass aliases to sudo
-
-# chicken
-export CHICKEN_REPOSITORY=$HOME/.chicken/eggs
 
 # fasd
 eval "$(fasd --init auto)"
 alias v='f -e vim'
-
-alias init-nvm="source $HOME/lib/scripts/init-nvm.sh"
-alias init-pyenv="source $HOME/lib/scripts/init-pyenv.sh"
-alias init-rbenv="source $HOME/lib/scripts/init-rbenv.sh"
-
-# golang
-export GOPATH=$HOME/projects/go
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -66,8 +42,9 @@ else
    export GIT_AUTHOR_EMAIL="mamciek@gmail.com"
 fi
 
-if [ `os_type` == "mac" ]; then
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	. $(brew --prefix)/etc/bash_completion
-    fi
-fi
+fbr() {
+  local branches branch
+  branches=$(git branch -a) &&
+  branch=$(echo "$branches" | fzf +s +m -e) &&
+  git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
+}

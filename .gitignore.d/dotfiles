@@ -19,6 +19,3 @@
 !/.xinitrc
 !/.xmonad/xmonad.hs
 !/bin/mount-encfs
-!/lib/scripts/init-nvm.sh
-!/lib/scripts/init-pyenv.sh
-!/lib/scripts/init-rbenv.sh
