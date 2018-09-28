@@ -1,6 +1,7 @@
 [core]
 	symlinks = true
 	autocrlf = input
+	excludesfile = ~/.config/git/ignore
 [color]
 	diff = auto
 	branch = auto
@@ -22,3 +23,15 @@
 	prm = "!f() { git fetch $1 refs/pull-requests/$2/merge:$3; } ; f"
 [push]
 	default = simple
+[user]
+	name = Maciej Mazur
+	email = mamciek@gmail.com
+
+[merge]
+	keepBackup = false
+	keepTemporaries = false
+	tool = meld
+
+[mergetool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\"

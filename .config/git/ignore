@@ -1,0 +1,6 @@
+.direnv
+.envrc
+shell.nix
+pip_packages
+node_modules
+.vscode
