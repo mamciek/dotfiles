@@ -2,6 +2,11 @@
 !/.Xmodmap
 !/.bash_profile
 !/.bashrc
+!/.config/fish/config.fish
+!/.config/fish/functions/fish_title.fish
+!/.config/fish/functions/la.fish
+!/.config/fish/functions/ll.fish
+!/.config/fish/functions/ls.fish
 !/.config/git/config
 !/.config/git/ignore
 !/.config/systemd/user/alttab.service
