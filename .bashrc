@@ -19,6 +19,7 @@ if hash exa 2>/dev/null; then
     alias ls='exa'
 fi
 alias ll='ls -l'
+alias la='ls -al'
 alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
@@ -48,3 +49,5 @@ fbr() {
   branch=$(echo "$branches" | fzf +s +m -e) &&
   git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
+
+eval "$(direnv hook bash)"
