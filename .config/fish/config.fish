@@ -4,10 +4,15 @@ if status --is-login
   source $HOME/.config/fish/nix.fish
   
   #: gpg-agent {{{
-  set -x SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
+  set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
   gpgconf --launch gpg-agent
   #: }}}
 end
+
+#: gpg-agent {{{
+set -x GPG_TTY (tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+#: }}}
 
 #: fisherman {{{
 set -x fish_path $HOME/.config/fisherman-plugins

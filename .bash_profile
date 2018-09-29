@@ -5,7 +5,7 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 #: gpg-agent {{{
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 gpgconf --launch gpg-agent
 #: }}}
 

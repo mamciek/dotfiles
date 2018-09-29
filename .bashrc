@@ -11,6 +11,11 @@ function prepend_path() {
   [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
 }
 
+#: gpg-agent {{{
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+#: }}}
+
 umask 0022
 
 export EDITOR=vim
