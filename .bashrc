@@ -7,13 +7,16 @@ function os_type() {
     esac
 }
 
+function prepend_path() {
+  [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
+}
+
 umask 0022
 
 export EDITOR=vim
 export HISTCONTROL=ignoreboth:erasedups
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export PATH=$HOME/bin:$PATH
 alias ls='LC_COLLATE=POSIX ls -hF --color=auto'
 if hash exa 2>/dev/null; then
     alias ls='exa'
@@ -29,7 +32,8 @@ alias sudo='sudo '                  # pass aliases to sudo
 eval "$(fasd --init auto)"
 alias v='f -e vim'
 
-export PATH="$HOME/.cargo/bin:$PATH"
+prepend_path "$HOME/.cargo/bin"
+prepend_path "$HOME/bin"
 
 if [ $(hostname) = "rq-mmazur.echostar.pl" -o $(hostname) = 'rq-mmazur' ]; then
    export GIT_COMMITTER_NAME="Maciej Mazur"

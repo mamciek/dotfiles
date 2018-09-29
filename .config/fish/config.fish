@@ -22,6 +22,6 @@ end
 
 set -x EDITOR vim
 
-set -x PATH "$HOME/.cargo/bin" $PATH
+prepend_paths "$HOME/bin" "$HOME/.cargo/bin"
 
 eval (direnv hook fish)
