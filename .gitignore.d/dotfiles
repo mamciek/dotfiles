@@ -10,6 +10,7 @@
 !/.config/fish/functions/prepend_paths.fish
 !/.config/fish/functions/remove_path.fish
 !/.config/fish/functions/v.fish
+!/.config/fisher-plugins/fishfile
 !/.config/git/config
 !/.config/git/ignore
 !/.config/systemd/user/alttab.service
